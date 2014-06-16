@@ -1,0 +1,51 @@
+// A test file for the ZML library
+// CC0 License
+
+/* Section
+*/
+ShaderResource {
+	// member
+	Name = "mesh_generic"
+	File = "/shaders/glsl/mesh_generic.glsl"
+
+	Defines {
+		HAS_NORMALMAP = 1
+	}
+
+	Stages {
+		Vertex = "vs_main"
+		Pixel  = "ps_main"
+	}
+
+	Samplers {
+		ColorMap    = 0
+		NormalMap   = 1
+		SpecularMap = 2
+		HeightMap   = 3
+		ShadowMap   = 4
+	}
+
+	ConstantBuffers {
+		CBPerInit  = 0
+		CBPerFrame = 1
+		CBPerDraw  = 2
+	}
+
+	Constants {
+		PI = 3.1415
+	}
+}
+
+World {
+	Name = "Hello, ZML"
+
+	WorldNode {
+		Name = "Test"
+		WorldNode {
+			Name = "Test"
+			WorldNode {
+				Name = "Test"
+			}
+		}
+	}
+}
